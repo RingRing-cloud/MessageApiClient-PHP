@@ -13,6 +13,7 @@
 		public $statusURL;
 		public $statusMethod;
 		public $statusFormat;
+		public $messageEncoding;
 		
 		function __construct($param = array()) {
 			$this->to = $param['to'] ?? null;
@@ -26,6 +27,7 @@
 			$this->statusURL = $param['statusURL'] ?? null;
 			$this->statusMethod = $param['statusMethod'] ?? null;
 			$this->statusFormat = $param['statusFormat'] ?? null;
+			$this->messageEncoding = $param['messageEncoding'] ?? null;
 		}
 		
 	}
