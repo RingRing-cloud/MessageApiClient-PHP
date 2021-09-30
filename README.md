@@ -12,23 +12,20 @@ RingRing provides simple and fast API for sending and receiving text messages (S
 
 ```php
 <?php
+require_once("autoload.php");
+    $client = new RingRing\Client("APIKEY");
 
-	require_once("lib/autoload.php");
-
-	$client = new Client(APIKEY);
-	
-	try {
-		$result = $client->sendMessage(
-			new MessageRequest(array(
-				"to" => "PHONE_NUMBER",
-				"message" => "YOUR_MESSAGE",
-				"timeScheduled"=> "DD/MM/YYYY"
-			))
-		);
-	} catch(HTTPException $e) {
-		// ...
-	}
-	
+    try {
+        $result = $client->sendMessage(
+            new RingRing\Model\Request\MessageRequest(array(
+                "to" => "PHONE_NUMBER",
+                "message" => "YOUR_MESSAGE",
+                "timeScheduled"=> "DD/MM/YYYY"
+            ))
+        );
+    } catch(HTTPException $e) {
+        // ...
+    }
 ?>
 ```
 
